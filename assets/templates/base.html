@@ -1,0 +1,113 @@
+{%load static%}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Development of an Early Warning System to Support Educational Planning Process byIdentifying At-Risk
+        Students</title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+
+    <link href="{%static 'css/tooplate_style.css'%}" rel="stylesheet" type="text/css"/>
+
+    <script type="text/javascript" src="{%static 'js/swfobject.js'%}"></script>
+    <script type="text/javascript">
+	var flashvars = {};
+	flashvars.xml_file = "photo_list.xml";
+	var params = {};
+	params.wmode = "transparent";
+	var attributes = {};
+	attributes.id = "slider";
+	swfobject.embedSWF("flash_slider.swf", "flash_grid_slider", "960", "360", "9.0.0", false, flashvars, params, attributes);
+
+    </script>
+
+    <link rel="stylesheet" type="text/css" href="{%static 'css/ddsmoothmenu.css'%}"/>
+
+    <script type="text/javascript" src="{%static 'js/jquery.min.js'%}"></script>
+    <script type="text/javascript" src="{%static 'js/ddsmoothmenu.js'%}">
+
+    </script>
+
+    <script type="text/javascript">
+
+ddsmoothmenu.init({
+	mainmenuid: "tooplate_menu", //menu DIV id
+	orientation: 'h', //Horizontal or vertical menu: Set to "h" or "v"
+	classname: 'ddsmoothmenu', //class added to menu's outer DIV
+	//customtheme: ["#1c5a80", "#18374a"],
+	contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
+})
+
+
+    </script>
+
+    <!--////// CHOOSE ONE OF THE 3 PIROBOX STYLES  \\\\\\\-->
+    <link href="{%static 'css_pirobox/white/style.css'%}" media="screen" title="shadow" rel="stylesheet"
+          type="text/css"/>
+    <!--<link href="css_pirobox/white/style.css" media="screen" title="white" rel="stylesheet" type="text/css" />
+    <link href="css_pirobox/black/style.css" media="screen" title="black" rel="stylesheet" type="text/css" />-->
+    <!--////// END  \\\\\\\-->
+
+    <!--////// INCLUDE THE JS AND PIROBOX OPTION IN YOUR HEADER  \\\\\\\-->
+    <script type="text/javascript" src="{%static 'js/jquery.min.js'%}"></script>
+    <script type="text/javascript" src="{%static 'js/piroBox.1_2.js'%}"></script>
+    <script type="text/javascript">
+$(document).ready(function() {
+$().piroBox({
+        my_speed: 600, //animation speed
+        bg_alpha: 0.5, //background opacity
+        radius: 4, //caption rounded corner
+        scrollImage : false, // true == image follows the page, false == image remains in the same open position
+        pirobox_next : 'piro_next', // Nav buttons -> piro_next == inside piroBox , piro_next_out == outside piroBox
+        pirobox_prev : 'piro_prev',// Nav buttons -> piro_prev == inside piroBox , piro_prev_out == outside piroBox
+        close_all : '.piro_close',// add class .piro_overlay(with comma)if you want overlay click close piroBox
+        slideShow : 'slideshow', // just delete slideshow between '' if you don't want it.
+        slideSpeed : 4 //slideshow duration in seconds(3 to 6 Recommended)
+});
+});
+
+    </script>
+    <!--////// END  \\\\\\\-->
+
+</head>
+<body id="sub_page">
+
+<div id="tooplate_wrapper_sp">
+    <div id="tooplate_header_sp">
+        <div id="tooplate_menu" class="ddsmoothmenu">
+            <ul>
+                <li><a href="{%url 'index'%}">Home</a></li>
+                <li><a href="{%url 'UserLogin'%}">Users</a></li>
+                <li><a href="{%url 'AdminLogin'%}">Admins</a></li>
+                <li><a href="{%url 'UserRegister'%}">Registrations</a></li>
+
+            </ul>
+            <br style="clear: left"/>
+        </div> <!-- end of tooplate_menu -->
+
+        <div id="#">
+            <br/>
+            <h1>
+                <span style="color:black">Development of an Early Warning System to Support <br/><br/>Educational Planning Process byIdentifying At-Risk Students</span>
+            </h1>
+        </div>
+    </div>
+
+    {%block contents%}
+
+    {%endblock%}
+    <!-- end of main -->
+
+</div>
+
+<div id="tooplate_footer_wrapper">
+    <div id="tooplate_footer">
+        Copy Rights © 2025 <a href="#">Alex Corporations</a>
+        <div class="cleaner"></div>
+    </div>
+</div>
+
+</body>
+</html>

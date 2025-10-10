@@ -1,0 +1,70 @@
+{%extends 'admins/adminbase.html'%}
+
+{%block contents%}
+<div id="tooplate_main">
+		<h2>Accuracy Graps</h2>
+		<p>
+            <section id="home" data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="home-info">
+                    <section id="contact" data-stellar-background-ratio="0.5">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12">
+                                    <div class="section-title">
+                                        <h1>Chart Analysis</h1>
+                                        <div id="container" width="200" height="200"></div>
+                                        <script src="https://code.highcharts.com/highcharts.src.js"></script>
+                                        <script>
+    Highcharts.chart('container', {
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Accuracy Comparison'
+        },
+        xAxis: {
+           categories: [
+            'KNN','Decision Tree','Neural Network','Naive Bayes','SVM'
+          ]
+        },
+        series: [{
+            name: 'Algorithms',
+            data: [
+            {{knn_acc}},{{dt_acc}},{{nn_acc}},{{nb_acc}},{{svm_acc}}
+          ],
+          color: 'GREEN'
+        },]
+    });
+
+                                        </script>
+                                    </div>
+                                </div>
+                                <div class="col-md-8 col-sm-8">
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+        </p>
+		<div class="cleaner h40"></div>
+
+
+        <div class="col_w550 float_l">
+
+
+        </div>
+
+
+
+        <div class="cleaner"></div>
+    </div>
+{%endblock%}
