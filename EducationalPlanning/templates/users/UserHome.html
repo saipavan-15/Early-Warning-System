@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+<head><title>User Home</title></head>
+<body>
+  <h1>Welcome, {{ request.user.loginname }}</h1>
+  <p>This is the user home page.</p>
+
+  <ul>
+    <li><a href="/UserViewData/">View Dataset</a></li>
+    <li><a href="/PreprocessedData/">Preprocessed Data</a></li>
+    <li><a href="/MLResults/">Machine Learning Results</a></li>
+    <li><a href="/heatMapDraw/">Correlation Heatmap</a></li>
+  </ul>
+</body>
+</html>

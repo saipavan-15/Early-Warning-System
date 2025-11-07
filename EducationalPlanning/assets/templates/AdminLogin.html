@@ -1,0 +1,53 @@
+{%extends 'base.html'%}
+
+{%block contents%}
+<div id="tooplate_main">
+		<h2>Admin Login Form</h2>
+		<p>
+            <em>
+                 <form action="{%url 'AdminLoginCheck'%}" method="POST" class="text-primary" style="width:100%">
+                    {% csrf_token %}
+                    <table>
+<tr>
+    <td>Enter Login ID</td>
+    <td><input type="text" class="form-control" name="loginid" required placeholder="Enter Login Id"></td>
+</tr>
+<tr>
+    <td>Enter Password</td>
+    <td><input type="password" class="form-control" name="pswd" required placeholder="Enter password"></td>
+</tr>
+
+<tr>
+    <td></td>
+    <td><button class="btn btn-block btn-primary text-white py-3 px-5" style="margin-left:20%;" type="submit">Login</button> </td>
+</tr>
+
+
+
+
+                        {% if messages %}
+                        {% for message in messages %}
+                        <font color='GREEN'> {{ message }}</font>
+                        {% endfor %}
+                        {% endif %}
+
+                    </table>
+
+                </form>
+
+            </em>
+        </p>
+		<div class="cleaner h40"></div>
+
+
+
+        <div class="col_w550 float_l">
+
+
+        </div>
+
+
+
+        <div class="cleaner"></div>
+    </div>
+{%endblock%}
