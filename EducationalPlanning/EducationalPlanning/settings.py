@@ -13,19 +13,14 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 from pathlib import Path
 import os
 
-# Base directory
-BASE_DIR = Path(__file__).resolve().parent.parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent
 
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '%=ati3m5t80s3jdpl%udz_9q8#0t!=ubi#8bwcem_n1)((6-p1'
 
-# Turn OFF debug in production
 DEBUG = False
 
-# Allow Render + local
 ALLOWED_HOSTS = ["*", "localhost", "127.0.0.1"]
 
-# Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -34,7 +29,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # IMPORTANT: Correct module paths for your apps
     'EducationalPlanning.users',
     'EducationalPlanning.admins',
 ]
@@ -49,11 +43,9 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-# ✅ Correct nested project paths
-ROOT_URLCONF = 'EducationalPlanning.EducationalPlanning.urls'
-WSGI_APPLICATION = 'EducationalPlanning.EducationalPlanning.wsgi.application'
+ROOT_URLCONF = 'EducationalPlanning.urls'
+WSGI_APPLICATION = 'EducationalPlanning.wsgi.application'
 
-# Database (SQLite)
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -61,7 +53,6 @@ DATABASES = {
     }
 }
 
-# Password Validation
 AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
     {'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator'},
@@ -69,21 +60,18 @@ AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'},
 ]
 
-# Internationalization
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'Asia/Kolkata'
 USE_I18N = True
 USE_TZ = True
 
-# Static Files
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'EducationalPlanning', 'assets', 'static'),
+    os.path.join(BASE_DIR, 'assets', 'static'),
 ]
 
-# Media Files
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'EducationalPlanning', 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
