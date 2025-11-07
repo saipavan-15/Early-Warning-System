@@ -10,19 +10,19 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
-import os
 from pathlib import Path
+import os
 
 # Base directory
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '%=ati3m5t80s3jdpl%udz_9q8#0t!=ubi#8bwcem_n1)((6-p1'
 
-# Debug off for production
+# Turn OFF debug in production
 DEBUG = False
 
-# Allow Render + Local
+# Allow Render + local
 ALLOWED_HOSTS = ["*", "localhost", "127.0.0.1"]
 
 # Application definition
@@ -34,7 +34,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # Your apps (FIXED module paths)
+    # IMPORTANT: Correct module paths for your apps
     'EducationalPlanning.users',
     'EducationalPlanning.admins',
 ]
@@ -49,27 +49,11 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'EducationalPlanning.urls'
+# ✅ Correct nested project paths
+ROOT_URLCONF = 'EducationalPlanning.EducationalPlanning.urls'
+WSGI_APPLICATION = 'EducationalPlanning.EducationalPlanning.wsgi.application'
 
-TEMPLATES = [
-    {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'assets/templates')],
-        'APP_DIRS': True,
-        'OPTIONS': {
-            'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
-            ],
-        },
-    },
-]
-
-WSGI_APPLICATION = 'EducationalPlanning.wsgi.application'
-
-# Database
+# Database (SQLite)
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -77,7 +61,7 @@ DATABASES = {
     }
 }
 
-# Password validation
+# Password Validation
 AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
     {'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator'},
@@ -91,13 +75,15 @@ TIME_ZONE = 'Asia/Kolkata'
 USE_I18N = True
 USE_TZ = True
 
-# Static files
+# Static Files
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'assets/static')]
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'EducationalPlanning', 'assets', 'static'),
+]
 
-# Media
+# Media Files
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'EducationalPlanning', 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
