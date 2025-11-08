@@ -38,11 +38,10 @@ urlpatterns = [
     path("heatMapDraw/", usr.heatMapDraw, name="heatMapDraw"),
 
     # Admin Side Views
-    path("AdminLoginCheck/", admins.AdminLoginCheck, name="AdminLoginCheck"),
-    path("AdminHome/", admins.AdminHome, name="AdminHome"),
-    path("ViewRegisteredUsers/", admins.ViewRegisteredUsers, name="ViewRegisteredUsers"),
-    path("AdminActivaUsers/", admins.AdminActivaUsers, name="AdminActivaUsers"),
-    path("DeleteUsers/", admins.DeleteUsers, name="DeleteUsers"),
-    path("adminMLResults/", admins.adminMLResults, name="adminMLResults"),
-
+    path("AdminLoginCheck/", adm.AdminLoginCheck, name="AdminLoginCheck"),
+    path("AdminHome/", adm.AdminHome, name="AdminHome"),
+    path("ViewRegisteredUsers/", adm.ViewRegisteredUsers, name="ViewRegisteredUsers"),
+    path("AdminActivaUsers/", adm.AdminActivaUsers, name="AdminActivaUsers"),
+    path("DeleteUsers/", adm.DeleteUsers, name="DeleteUsers"),
+    path("adminMLResults/", adm.adminMLResults, name="adminMLResults"),
 ]
