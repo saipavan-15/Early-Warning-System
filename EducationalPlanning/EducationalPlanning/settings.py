@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 from pathlib import Path
 import os
 
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parents[2]
 
 SECRET_KEY = '%=ati3m5t80s3jdpl%udz_9q8#0t!=ubi#8bwcem_n1)((6-p1'
 
