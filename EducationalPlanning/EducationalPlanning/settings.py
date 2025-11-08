@@ -43,8 +43,9 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'EducationalPlanning.urls'
-WSGI_APPLICATION = 'EducationalPlanning.wsgi.application'
+ROOT_URLCONF = 'EducationalPlanning.EducationalPlanning.urls'
+WSGI_APPLICATION = 'EducationalPlanning.EducationalPlanning.wsgi.application'
+
 
 DATABASES = {
     'default': {
