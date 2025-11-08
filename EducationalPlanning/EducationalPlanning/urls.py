@@ -15,8 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from users import views as usr
-from admins import views as admins
+from EducationalPlanning.users import views as usr
+from EducationalPlanning.admins import views as adm
 from EducationalPlanning import views as mainView
 
 urlpatterns = [
