@@ -15,9 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from EducationalPlanning.EducationalPlanning import views as mainView
 from EducationalPlanning.users import views as usr
 from EducationalPlanning.admins import views as adm
-from EducationalPlanning import views as mainView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
