@@ -1,6 +1,9 @@
 # Early Warning System for Student Performance Prediction
 
 This project is an **AI-powered academic risk prediction system** designed to help educational institutions identify students who are at risk of low academic performance. The system analyzes historical and real-time academic data, predicts performance outcomes, and provides **role-based dashboards** for teachers and administrators to take informed corrective actions.
+- **End-to-End ML Integration:** The model is trained using Scikit-Learn and serialized with joblib, then loaded into Django to generate predictions in real-time.
+- **Risk Prediction UI:** The system provides a clean output interface showing whether a student is **At-Risk** or **Not At-Risk** based on academic performance features.
+
 
 ---
 
@@ -108,6 +111,10 @@ yaml
 Copy code
 
 ---
+
+
+
+
 
 ## 🚀 How to Run Locally
 
