@@ -38,7 +38,7 @@ Copy code
 | Machine Learning | Scikit-Learn, Pandas, NumPy |
 | Database | MySQL |
 | Frontend | HTML, CSS, Bootstrap / Tailwind |
-| Deployment (if used later) | Render / Railway / AWS EC2 |
+| Deployment | Render / Railway / AWS EC2 |
 | Version Control | Git & GitHub |
 
 ---
